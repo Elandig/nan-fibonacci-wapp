@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nan-Fibonacci Web App</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      margin: 0;
+      padding: 0;
+      color: white;
+      background-color: black;
+    }
+
+    .container {
+      width: 100%;
+    }
+
+    .btn-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin: 140px 0;
+    }
+
+    h1 {
+      text-align: center;
+      width: 100%;
+      margin-top: 200px;
+    }
+
+    button {
+      font-size: 1.2em;
+      background: none;
+      border: white;
+      border-style: solid;
+      border-radius: 10px;
+      border-width: 4px;
+      color: white;
+      width: 14em;
+      height: 55px;
+      margin: 0 20px;
+    }
+
+    .counter-container {
+      display: flex;
+      justify-content: center;
+      width: 35%;
+      margin: 0 auto;
+    }
+
+    .counter {
+      margin: 0 10px;
+      text-align: center;
+      font-size: 2em;
+      width: 100%;
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Nan-Fibonacci Web App </h1>
+    <div class="btn-container">
+      <button id="getBtn">Next number</button>
+      <button id="resetBtn">Reset</button>
+    </div>
+    <div class="counter-container">
+      <div class="counter" id="counter-1">...</div>
+      <div class="counter" id="counter-2">...</div>
+      <div class="counter" id="counter-3">0</div>
+    </div>
+  </div>
+  <script>
+    // MIT License. Copyright (c) 2021 Elandig
+
+    const prePreviousOne = document.getElementById("counter-1")
+    const previousOne = document.getElementById("counter-2")
+    const counter = document.getElementById("counter-3")
+
+    const updateState = (value, reset) => {
+      prePreviousOne.innerHTML = reset ? '...' : previousOne.innerHTML
+      previousOne.innerHTML = reset ? '...' : counter.innerHTML
+      counter.innerHTML = value
+    }
+
+    document.getElementById("getBtn").addEventListener("click", () => {
+      fetch('get').then((response) => {
+        if (!response.ok)
+          throw Error(response.statusText)
+        response.text().then(data => updateState(data.length <= 17 ? data : data + '..'))
+      })
+    })
+
+    document.getElementById("resetBtn").addEventListener("click", () => {
+      fetch('reset').then((response) => {
+        if (!response.ok)
+          throw Error(response.statusText)
+        response.text().then(data => {
+          updateState(data, true)
+          fetch('get')
+        })
+      })
+    })
+
+    fetch('reset')
+    fetch('get')
+  </script>
+</body>
+
+</html>
