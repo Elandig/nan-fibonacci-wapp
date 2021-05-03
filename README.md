@@ -26,12 +26,12 @@ npm install
 ## Build the [nan-fibonacci](https://github.com/Elandig/nan-fibonacci/) addon
 * `cd` into `lib/nan-fibonacci`
 * Follow this [README.md](https://github.com/Elandig/nan-fibonacci/blob/main/README.md#install-dependencies) to build the addon
-* If you've done everything right your compiled `nan_fibonacci.node` addon should be accessible by following: `/lib/nan-fibonacci/build/Release/nan_fibonacci.node`
+* If you've done everything right your compiled binary file `nan_fibonacci.node` should be accessible by the following path: `/lib/nan-fibonacci/build/Release/nan_fibonacci.node`
 
 
 # Usage
 
-## Start the server
+## Run the server
 ```
 npm run start
 ```
