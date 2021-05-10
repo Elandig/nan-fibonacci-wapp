@@ -1,3 +1,0 @@
-[submodule "lib/nan-fibonacci"]
-	path = lib/nan-fibonacci
-	url = https://github.com/Elandig/nan-fibonacci.git
