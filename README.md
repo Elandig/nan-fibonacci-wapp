@@ -1,5 +1,5 @@
 # nan-fibonacci-wapp
-Web Application for the [nan-fibonacci](https://github.com/Elandig/nan-fibonacci/) addon
+Web Application for the [nan-fibonacci(v1.0.1)](https://github.com/Elandig/nan-fibonacci/tree/v1.0.1) addon
 
 # Install
 
@@ -23,9 +23,9 @@ git submodule update
 npm install
 ```
 
-## Build the [nan-fibonacci](https://github.com/Elandig/nan-fibonacci/) addon
+## Build the [nan-fibonacci](https://github.com/Elandig/nan-fibonacci/tree/v1.0.1) addon
 * `cd` into `lib/nan-fibonacci`
-* Follow this [README.md](https://github.com/Elandig/nan-fibonacci/blob/main/README.md#install-dependencies) to build the addon
+* Follow this [README.md](https://github.com/Elandig/nan-fibonacci/blob/v1.0.1/README.md#install-dependencies) to build the addon
 * If you've done everything right your compiled binary file `nan_fibonacci.node` should be accessible by the following path: `/lib/nan-fibonacci/build/Release/nan_fibonacci.node`
 
 
@@ -40,4 +40,4 @@ npm run start
 http://localhost:3000
 
 # License
-[MIT](https://github.com/Elandig/nan-fibonacci-wapp/blob/main/LICENSE) Copyright (C) 2021 [Elandig](https://github.com/Elandig)
+[MIT](https://github.com/Elandig/nan-fibonacci/blob/v1.0.1/LICENSE) Copyright (C) 2021 [Elandig](https://github.com/Elandig)
