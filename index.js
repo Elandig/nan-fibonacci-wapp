@@ -15,8 +15,9 @@ const PORT = process.env.PORT || 3000
 
 // Middleware
 app.use(cookieParser());
-app.use(session({ secret: process.env.SECRET || "Some secret value", expires: new Date(Date.now() + (process.env.EXPIRES || 300000)) }));
+app.use(session({ secret: process.env.SECRET || "Some secret value", expires: new Date(Date.now() + (process.env.EXPIRES || 300000)), resave: true, saveUninitialized: false }));
 app.use(helmet({ contentSecurityPolicy: false }))
+app.use('/static', express.static('public'))
 
 // Array for NanFibonacci session instances storage
 var session_instances = []
