@@ -6,24 +6,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nan-Fibonacci Web App</title>
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+  <!-- Don't use this in production: -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <link rel="stylesheet" href="static/style.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
 </head>
 
 <body>
-  <div class="container">
-    <h1>Nan-Fibonacci Web App </h1>
-    <div class="btn-container">
-      <button id="getBtn">Next number</button>
-      <button style="display:none;" id="resetBtn">Reset</button>
-    </div>
-    <div class="counter-container">
-      <div class="counter" id="counter-1">...</div>
-      <div class="counter" id="counter-2">...</div>
-      <div class="counter" id="counter-3">0</div>
-    </div>
-  </div>
-  <script src="static/script.js"></script>
+  <div id="app"></div>
+  <script src="static/script.js" type="text/babel"></script>
 </body>
+
 </html>
