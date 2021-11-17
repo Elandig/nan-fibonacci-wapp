@@ -9,7 +9,7 @@
   "author": "Elandig",
   "license": "MIT",
   "dependencies": {
-    "cookie-parser": "^1.4.5",
+    "cookie-parser": "^1.4.6",
     "express": "^4.17.1",
     "express-session": "^1.17.2",
     "helmet": "^4.6.0"
